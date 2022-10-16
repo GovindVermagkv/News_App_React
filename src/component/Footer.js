@@ -1,10 +1,17 @@
-import React from "react";
+import React, { useState } from "react";
 
 const Footer=()=>{
+const [date]=useState(
+    {
+        currentDateTime: Date().toLocaleString()
+    }
+)
+
 return(
     <>
-        <div>
-            <h1>this is Footer Area</h1>
+        <div id="footer">
+        <p>ALL RIGHT RESERVED <span> &copy; </span>Govind Verma</p>
+        <p>{date.currentDateTime}</p>
         </div>
     </>
 )

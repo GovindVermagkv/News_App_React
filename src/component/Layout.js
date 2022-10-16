@@ -5,10 +5,6 @@ import { useState } from "react";
 
 const Layout = () => {
 
-    const [Value, setValue] = useState({
-        "value": "",
-    })
-
     return (
        
         <>
@@ -16,10 +12,6 @@ const Layout = () => {
             <div id="Layout_Container">
                 <div>
                     <h1><i class="fa fa-newspaper-o"></i>अपनी खबर</h1>
-                    <div>
-                        <input type={"text"} placeholder='Search' name="search" value={Value.value} />
-                        <button>Search</button>
-                    </div>
                    
                 </div>
 

@@ -7,6 +7,7 @@ import ContactUs from './component/ContactUs';
 import Team from './component/Team';
 import { BrowserRouter, Routes, Route } from "react-router-dom"
 import {useState} from 'react'
+import 'animate.css'
 
 
 
@@ -30,7 +31,7 @@ const handleBgColor=()=>{
 
   return (
    <>
-   <div id='Appdiv' style={ Dark ? {backgroundColor:"black",color:'white'} : {backgroundColor:""}}>
+   <div id='Appdiv' style={ Dark ? {backgroundColor:"black",color:'white'} : {backgroundColor:""}}  className="animate__animated animate__zoomIn">
  
    
     <BrowserRouter>
@@ -44,7 +45,8 @@ const handleBgColor=()=>{
       </Routes>
     </BrowserRouter>
     
-    <i className={ Dark ? "fa fa-sun-o" : "fa fa-moon-o"} style={Dark ? {color:"white"}:{color:"red"}} onClick={handleBgColor} id="changeicon"></i>
+    <i className={ Dark ? "fa fa-sun-o" : "fa fa-moon-o"} style={Dark ? {color:"white"}:{color:"black"}} onClick={handleBgColor} id="changeicon"></i>
+
     {/* <h1>ram</h1> */}
     </div>
     </>
