@@ -1,0 +1,85 @@
+*{
+  margin: 0%;
+  padding: 0%;
+}
+#Appdiv{
+  width: 100%;
+  height: 100vh;
+}
+#Layout_Container{
+  width: 100%;
+  height: 200px;
+}
+#Layout_Container>div{
+ display: flex;
+ justify-content: space-around;
+ padding: 30px 0px;
+}
+#Layout_Container>div>div{
+  width: 30%;
+}
+#Layout_Container>div>i{
+  font-size: 30px;
+  cursor: pointer;
+}
+#changeicon{
+  font-size: 30px;
+  cursor: pointer;
+  float: right;
+ position: relative;
+ top: 50%;
+ right: 5%;
+ border: 1px solid red;
+ padding: 7px;
+ border-radius: 8px;
+}
+#Layout_Container>div>div>input{
+  width: 60%;
+  height: 20px;
+  font-size: 15px;
+  padding: 5px;
+  border-radius: 20px;
+  outline: none;
+  border: 1px solid rgb(198, 126, 126);
+}
+#Layout_Container>div>div>button{
+  background-color: rgb(33, 203, 33);
+  color: white;
+  border: none;
+  padding: 7px 20px;
+  border-radius: 20px;
+  margin-left: 8px;
+}
+
+#Layout_Container>div>h1>i{
+  color: red;
+  margin: 0px 10px;
+}
+
+#Layout_Container>nav{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  background-color: red;
+  padding: 20px 0px;
+
+}
+#Layout_Container>nav>ul{
+  display: flex;
+  width: 100%;
+  justify-content: space-around;
+}
+#Layout_Container>nav>ul>li{
+  list-style-type: none;
+}
+#Layout_Container>nav>ul>li>#link{
+  color: white;
+  text-decoration: none;
+  font-size: 20px;
+  transition: .3s;
+  width: 30%;
+  padding-bottom: 2px ;
+}
+#link:hover{
+  border-bottom: 2px solid black;
+}
