@@ -31,7 +31,7 @@ const handleBgColor=()=>{
 
   return (
    <>
-   <div id='Appdiv' style={ Dark ? {backgroundColor:"black",color:'white'} : {backgroundColor:""}}  className="animate__animated animate__zoomIn">
+   <div id='Appdiv' style={ Dark ? {backgroundColor:"black",color:'white'} : {backgroundColor:""}}  >
  
    
     <BrowserRouter>
