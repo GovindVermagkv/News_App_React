@@ -7,7 +7,7 @@ return(
     <>
         <div id="teamcontainer" className="animate__animated animate__zoomIn">
                 <div id="team"><h1> Developed By</h1>
-                <img src="https://media-exp1.licdn.com/dms/image/C5603AQHEVOygiaMHJA/profile-displayphoto-shrink_400_400/0/1631068825613?e=1671667200&v=beta&t=MNKanPB-EtAF8hMNY5hZFswULVqbWfMuOdtDrOx53Xc" />
+                <img src="https://media-exp1.licdn.com/dms/image/C5603AQHEVOygiaMHJA/profile-displayphoto-shrink_400_400/0/1631068825613?e=1671667200&v=beta&t=MNKanPB-EtAF8hMNY5hZFswULVqbWfMuOdtDrOx53Xc" alt="" />
                     
                     <p><span>Name :-</span> Govind verma</p>
                     <p><span>Email :-</span> sonygovind.gkv740@gmail.com</p>

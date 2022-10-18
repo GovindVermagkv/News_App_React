@@ -2,6 +2,7 @@ import React from "react";
 import Footer from "./Footer";
 import '../App.css'
 import 'animate.css'
+import Example from "./coment";
 
 const Contact = () => {
     return (

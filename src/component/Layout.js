@@ -1,7 +1,8 @@
 import React from "react";
 import { Outlet, Link } from "react-router-dom";
 import '../App.css'
-import { useState } from "react";
+import Navbar from "./navbar";
+// import { useState } from "react";
 
 const Layout = () => {
 
@@ -15,14 +16,7 @@ const Layout = () => {
                    
                 </div>
 
-                <nav>
-                    <ul>
-                        <li><Link to='/' id="link">Headline</Link></li>
-                        <li><Link to='/About' id="link">About</Link></li>
-                        <li><Link to='/ContactUs' id="link">ContactUs</Link></li>
-                        <li><Link to='/Team' id="link">Team</Link></li>
-                    </ul>
-                </nav>
+                <Navbar />
             </div>
             <Outlet />
         </>
