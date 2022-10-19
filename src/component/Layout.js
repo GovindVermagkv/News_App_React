@@ -1,5 +1,5 @@
 import React from "react";
-import { Outlet, Link } from "react-router-dom";
+import { Outlet} from "react-router-dom";
 import '../App.css'
 import Navbar from "./navbar";
 // import { useState } from "react";

@@ -3,15 +3,16 @@ import { useState, useEffect } from "react";
 import '../App.css'
 import Comment from "./coment";
 import Footer from "./Footer";
+import Like from "./Like";
 
 
 
 
 const Headlines = () => {
+
     const [formdata, SetformData] = useState({
         "input": "",
     })
-    // const {name,value}=useState();
 
     const handleInput = (e) => {
         e.preventDefault()
@@ -31,17 +32,6 @@ const Headlines = () => {
 
     // -----------------------like------------------------//
 
-    // alert(currentdate.date);
-    const [Count, setCount] = useState(0)
-
-    const Like = (e) => {
-        setCount(Count + 1)
-        console.log(e.target.key);
-
-    }
-
-    // -------------------------------like-----------------------------//
-
 
 
 
@@ -56,9 +46,7 @@ const Headlines = () => {
 
 
     const fetchData = () => {
-        // fetch(`https://newsapi.org/v2/everything?q=tesla&from=2022-09-17&sortBy=publishedAt&apiKey=26e06a9990d74e95b4846cb6fe74bbf3`)
-        // fetch(`https://newsapi.org/v2/everything?q=${formdata.input}&from=${currentdate.date}&sortBy=publishedAt&apiKey=26e06a9990d74e95b4846cb6fe74bbf3`)
-        fetch(`https://newsapi.org/v2/everything?q=${formdata.input}&from=${currentdate.date}&to=${currentdate.date}&sortBy=popularity&apiKey=26e06a9990d74e95b4846cb6fe74bbf3`)
+         fetch(`https://newsapi.org/v2/everything?q=${formdata.input}&from=${currentdate.date}&to=${currentdate.date}&sortBy=popularity&apiKey=26e06a9990d74e95b4846cb6fe74bbf3`)
             .then(response => {
                 return response.json()
             })
@@ -67,6 +55,7 @@ const Headlines = () => {
                 console.log(data);
             })
         //   console.log(setUsers);
+
     }
 
     useEffect(() => {
@@ -79,7 +68,7 @@ const Headlines = () => {
                 setUsers(data.articles)
                 console.log(data);
             })
-        // console.log(users);
+
     }, [])
 
     return (
@@ -94,37 +83,37 @@ const Headlines = () => {
 
             <div id="Withapi">
                 <div id="aside">
-                <p>World</p>
-                <p>pakistan</p>
-                <p>USA</p>
-                <p>US</p>
-                <p>Russia</p>
-                <p>Chine</p>
-                <p>Nepal</p>
-                <p>India</p>
-                <p>India</p>
-                <p>India</p>
-                <p>India</p>
-                <p>India</p>
-                <p>India</p>
-                <p>India</p>
-                <p>India</p>
-                <p>India</p>
-                <p>India</p>
-                <p>India</p>
-                <p>India</p>
-                <p>India</p>
-                <p>India</p>
-                <p>India</p>
+                    <p>World</p>
+                    <p>pakistan</p>
+                    <p>USA</p>
+                    <p>US</p>
+                    <p>Russia</p>
+                    <p>Chine</p>
+                    <p>Nepal</p>
+                    <p>India</p>
+                    <p>India</p>
+                    <p>India</p>
+                    <p>India</p>
+                    <p>India</p>
+                    <p>India</p>
+                    <p>India</p>
+                    <p>India</p>
+                    <p>India</p>
+                    <p>India</p>
+                    <p>India</p>
+                    <p>India</p>
+                    <p>India</p>
+                    <p>India</p>
+                    <p>India</p>
                 </div>
                 <div id="withapi2">
                     {users.length > 0 && (
                         <div id="headcontainer">
 
-                            {users.map((user, index) => (
+                            {users.map((user) => (
                                 <>
                                     <div id="box">
-                                        <div id="box2" className="animate__animated animate__zoomIn">
+                                        <div id="box2" className="animate__animated animate__zoomIn ">
                                             <i className="fa fa-close" id="close"></i>
                                             <div id="image">
                                                 <img src={user.urlToImage} alt="" />
@@ -140,8 +129,7 @@ const Headlines = () => {
                                             </div>
                                             <div id="icons">
                                                 <div>
-                                                    <i className="fa fa-heart-o" id="like" onClick={Like} key={index}> {Count}</i>
-                                                    {/* <i className="fa fa-comment-o" onClick={Comment}></i> */}
+                                                    <Like />
                                                     <details id="commentdiv">
                                                         <summary><i className="fa fa-comment-o" onClick={Comment}></i></summary>
 
