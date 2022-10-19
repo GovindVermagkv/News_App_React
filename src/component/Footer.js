@@ -6,11 +6,7 @@ const [date]=useState(
         currentDateTime: Date().toLocaleString()
     }
 )
-// const UpdateTime=()=>{
-//     setDate(...date.currentDateTime)
-//     console.log(...date);
-//  }
-// //  setInterval(UpdateTime,1000)
+
 
 return(
     <>

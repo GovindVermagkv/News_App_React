@@ -30,47 +30,55 @@ const Headlines = () => {
         date: date
     })
 
+    
+    
+    
+    
     // -----------------------like------------------------//
 
+    
 
 
+    
 
 
-
-
-
-
-
+    
+    
+    
     const [users, setUsers] = useState([])
-
-
-
+    
+    
+    
     const fetchData = () => {
-         fetch(`https://newsapi.org/v2/everything?q=${formdata.input}&from=${currentdate.date}&to=${currentdate.date}&sortBy=popularity&apiKey=26e06a9990d74e95b4846cb6fe74bbf3`)
-            .then(response => {
-                return response.json()
-            })
-            .then(data => {
-                setUsers(data.articles)
-                console.log(data);
-            })
+        fetch(`https://newsapi.org/v2/everything?q=${formdata.input}&from=${currentdate.date}&to=${currentdate.date}&sortBy=popularity&apiKey=26e06a9990d74e95b4846cb6fe74bbf3`)
+        .then(response => {
+            return response.json()
+        })
+        .then(data => {
+            setUsers(data.articles)
+            console.log(data);
+        })
         //   console.log(setUsers);
-
+        
     }
-
+    
     useEffect(() => {
         // fetchData()
-        fetch(`https://newsapi.org/v2/everything?q=tesla&from=2022-09-18&sortBy=publishedAt&apiKey=26e06a9990d74e95b4846cb6fe74bbf3`)
-            .then(response => {
-                return response.json()
-            })
-            .then(data => {
-                setUsers(data.articles)
-                console.log(data);
-            })
-
+        fetch(`https://newsapi.org/v2/everything?q=tesla&from=2022-09-19&sortBy=publishedAt&apiKey=26e06a9990d74e95b4846cb6fe74bbf3`)
+        .then(response => {
+            return response.json()
+        })
+        .then(data => {
+            setUsers(data.articles)
+            console.log(data);                       
+        })
+        
     }, [])
-
+    
+    const Remove=(id)=>{
+let filterData=users.filter(item=>item.url!=id)
+setUsers([...filterData])
+    }
     return (
         <>
 
@@ -114,7 +122,7 @@ const Headlines = () => {
                                 <>
                                     <div id="box">
                                         <div id="box2" className="animate__animated animate__zoomIn ">
-                                            <i className="fa fa-close" id="close"></i>
+                                            <i className="fa fa-close" id="close" onClick={(e)=>Remove(user.url)}></i>
                                             <div id="image">
                                                 <img src={user.urlToImage} alt="" />
                                             </div>
