@@ -4,7 +4,7 @@ import '../App.css'
 import Comment from "./coment";
 import Footer from "./Footer";
 import Like from "./Like";
-
+import axios from 'axios';
 
 
 
@@ -62,21 +62,32 @@ const Headlines = () => {
         
     }
     
+
+
+
+const [isLoading, setLoading]=useState(false)
+
+
     useEffect(() => {
         // fetchData()
-        fetch(`https://newsapi.org/v2/everything?q=tesla&from=2022-09-19&sortBy=publishedAt&apiKey=26e06a9990d74e95b4846cb6fe74bbf3`)
+
+        setLoading(true)
+
+        axios.get(`https://newsapi.org/v2/everything?q=tesla&from=2022-09-21&sortBy=publishedAt&apiKey=26e06a9990d74e95b4846cb6fe74bbf3`)
+        // .then(response => {
+        //     return response.json()
+        // })
         .then(response => {
-            return response.json()
+            setUsers(response.data.articles)
+            console.log(response.data.articles);                       
         })
-        .then(data => {
-            setUsers(data.articles)
-            console.log(data);                       
-        })
+
+        setLoading(false)
         
     }, [])
     
     const Remove=(id)=>{
-let filterData=users.filter(item=>item.url!=id)
+let filterData=users.filter(item=>item.url!==id)
 setUsers([...filterData])
     }
     return (
@@ -114,6 +125,8 @@ setUsers([...filterData])
                     <p>India</p>
                     <p>India</p>
                 </div>
+
+                
                 <div id="withapi2">
                     {users.length > 0 && (
                         <div id="headcontainer">
@@ -121,6 +134,7 @@ setUsers([...filterData])
                             {users.map((user) => (
                                 <>
                                     <div id="box">
+                                    
                                         <div id="box2" className="animate__animated animate__zoomIn ">
                                             <i className="fa fa-close" id="close" onClick={(e)=>Remove(user.url)}></i>
                                             <div id="image">
